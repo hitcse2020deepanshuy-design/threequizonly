@@ -7,8 +7,8 @@ const SECTIONAL_CUTOFF = {
 };
 
 const USERS = {
-  "12345601": { name:"Deepanshu Yadav", password:"123456701", dob:"01-01-2000", total: 49.5, vocab: 16, ca: 17, desc: 16.5 },
-  "12345602": { name:"Nikita Soni", password:"123456702", dob:"02-02-2000", total: 52.5, vocab: 20, ca: 20, desc: 12.5 },
+  "9151701": { name:"Deepanshu Yadav", password:"9151001", dob:"05-07-2000", total: 49.5, vocab: 16, ca: 17, desc: 16.5 },
+  "8504002": { name:"Nikita Soni", password:"84040002", dob:"25-11-2004", total: 52.5, vocab: 20, ca: 20, desc: 12.5 },
   "12345603": { name:"Jyoti Yadav", password:"123456703", dob:"03-03-2000", total: 49.0, vocab: 20, ca: 15, desc: 14 },
   "12345604": { name:"Priyanka Dev", password:"123456704", dob:"04-04-2000", total: 49.0, vocab: 20, ca: 15, desc: 14 },
   "12345605": { name:"Goyal", password:"123456705", dob:"05-05-2000", total: 53.0, vocab: 20, ca: 14, desc: 19 },
@@ -78,3 +78,4 @@ function logout() {
   document.getElementById("dob").value = "";
   document.getElementById("error").textContent = "";
 }
+
