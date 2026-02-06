@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Deepanshu Yadav | Result Status Portal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">🏫 Deepanshu Yadav</div>
+    <div class="tag">Online Result Status Portal</div>
+  </header>
+
+  <main class="wrap">
+    <section class="card" id="loginCard">
+      <h2>Candidate Login</h2>
+      <p class="muted">Enter your credentials to view result status</p>
+
+      <div class="grid">
+        <label>Name</label>
+        <input type="text" id="nameInput" placeholder="Your full name" />
+
+        <label>Roll Number</label>
+        <input type="text" id="roll" placeholder="e.g. 12345601" />
+
+        <label>Password</label>
+        <input type="password" id="password" placeholder="••••••••" />
+
+        <label>Date of Birth</label>
+        <input type="text" id="dob" placeholder="DD-MM-YYYY" />
+      </div>
+
+      <button class="btn primary" onclick="login()">Check Result</button>
+      <div id="error" class="error"></div>
+    </section>
+
+    <section class="card" id="resultCard" style="display:none;">
+      <h2>Result Status</h2>
+      <p class="muted">Official result declaration</p>
+
+      <div class="panel">
+        <div class="row"><span>Name</span><strong id="nameShow"></strong></div>
+        <div class="row"><span>Roll Number</span><strong id="rollShow"></strong></div>
+        <div class="row"><span>Result Status</span><strong id="status"></strong></div>
+      </div>
+
+      <div id="congrats" class="congrats" style="display:none;"></div>
+
+      <button class="btn secondary" onclick="logout()">Logout</button>
+    </section>
+  </main>
+
+  <footer class="footer">© Deepanshu Yadav • All rights reserved</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
