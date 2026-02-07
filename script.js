@@ -108,42 +108,58 @@ function downloadPDF() {
 
   const doc = new jsPDF();
 
-  doc.setFontSize(16);
-  doc.text("OFFICIAL MARKSHEET", 105, 20, { align: "center" });
+  // Header band
+  doc.setFillColor(11, 58, 111);
+  doc.rect(0, 0, 210, 28, "F");
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(18);
+  doc.text("ONLINE RESULT PORTAL", 105, 18, { align: "center" });
   doc.setFontSize(11);
-  doc.text("Online Result Portal", 105, 28, { align: "center" });
+  doc.text("Official Marksheet", 105, 25, { align: "center" });
 
-  doc.text(`Name: ${name}`, 20, 45);
-  doc.text(`Roll No: ${roll}`, 20, 55);
-  doc.text(`Date: ${new Date().toLocaleDateString()}`, 150, 55);
+  doc.setTextColor(0,0,0);
 
+  // Candidate box
+  doc.rect(15, 35, 180, 30);
+  doc.setFontSize(11);
+  doc.text(`Name: ${name}`, 20, 48);
+  doc.text(`Roll No: ${roll}`, 20, 58);
+  doc.text(`Date of Issue: ${new Date().toLocaleDateString()}`, 140, 58);
+
+  // Marks table
   doc.setFontSize(12);
-  doc.text("Subject", 20, 75);
-  doc.text("Marks", 150, 75);
-  doc.line(20, 78, 190, 78);
+  doc.text("Subject", 25, 80);
+  doc.text("Marks Obtained", 150, 80);
+  doc.line(20, 83, 190, 83);
 
   doc.setFontSize(11);
-  doc.text("The Hindu Editorial", 20, 90);
-  doc.text(hindu, 150, 90);
+  doc.text("The Hindu Editorial", 25, 98);
+  doc.text(hindu, 150, 98);
+  doc.text("Current Affairs", 25, 113);
+  doc.text(ca, 150, 113);
+  doc.text("Descriptive Writing", 25, 128);
+  doc.text(desc, 150, 128);
 
-  doc.text("Current Affairs", 20, 105);
-  doc.text(ca, 150, 105);
-
-  doc.text("Descriptive Writing", 20, 120);
-  doc.text(desc, 150, 120);
-
+  // Total & status box
+  doc.rect(15, 140, 180, 28);
   doc.setFontSize(12);
-  doc.text(`Total Marks: ${total}`, 20, 145);
-  doc.text(`Final Status: ${status}`, 20, 160);
+  doc.text(`Total Marks: ${total}`, 25, 158);
+  doc.text(`Final Result: ${status}`, 120, 158);
 
-  doc.text("Authorized Signatory", 140, 190);
+  // Signature
+  doc.setFontSize(11);
+  doc.text("Authorized Signature", 140, 190);
   doc.line(135, 192, 190, 192);
+  doc.setFontSize(10);
+  doc.text("Deepanshu Yadav", 145, 200);
 
-  doc.setTextColor(200, 200, 200);
-  doc.setFontSize(40);
-  doc.text("OFFICIAL RESULT", 105, 140, { angle: 45, align: "center" });
+  // Watermark
+  doc.setTextColor(200,200,200);
+  doc.setFontSize(42);
+  doc.text("OFFICIAL MARKSHEET", 105, 155, { angle: 45, align: "center" });
 
-  doc.setTextColor(0, 0, 0);
+  // Footer
+  doc.setTextColor(0,0,0);
   doc.setFontSize(9);
   doc.text("This is a system generated marksheet.", 105, 285, { align: "center" });
 
